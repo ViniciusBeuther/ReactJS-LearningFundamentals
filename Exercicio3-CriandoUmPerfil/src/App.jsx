@@ -11,7 +11,8 @@ export default function App(){
         phone={"(47) 99122-2358"} 
         email={"vinicius.beuther15@gmail.com"}  
         gitURL={"https://github.com/ViniciusBeuther"} 
-        linkedinURL={"https://www.linkedin.com/in/viniciuseduardobeuther/"} instagramURL={"https://instagram.com/"} 
+        linkedinURL={"https://www.linkedin.com/in/viniciuseduardobeuther/"} 
+        instagramURL={"https://instagram.com/"} 
       />
     </>
   )
