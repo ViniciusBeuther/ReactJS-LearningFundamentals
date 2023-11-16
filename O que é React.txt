@@ -1,0 +1,10 @@
+* É uma bilbioteca para criar interfaces web ou nativas
+> Desenvolvido pelo facebook
+> Construimos interfaces com React baseada na construção de pequenos blocos, chamados de componentes
+> Criado para trabalhar com interatividade
+
+Por que usar React e não apenas javascript?
+R: React é + Simples, + produtivo, + manuteníveis e + poderoso.
+
+=== VIRTUAL DOM ===
+- Usado para atualizar elementos na tela

@@ -1,0 +1,38 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: monospace;
+}
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container{
+    background-color: #8499ac;
+    border-radius: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 50%;
+    padding: 25px;
+    margin-bottom: 25px;
+    width: 80%;
+}
+
+.title{
+    color: white;
+}
+
+img{
+    width: 200px;
+    height: 240px;
+    margin-right: 20px;
+}
+
+p{
+    text-align: justify;
+}

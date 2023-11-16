@@ -1,0 +1,16 @@
+.wrapper{
+    background-color: black;
+    color: white;
+    border: none;
+    padding: .75em 1.25em;
+    font-size:  1rem;
+    margin-top: 2rem;
+    text-align: center;
+    border-radius: .5rem;
+}
+
+.wrapper:hover{
+    cursor: pointer;
+    transform: translateX(5px);
+    transition: .3s;
+}
