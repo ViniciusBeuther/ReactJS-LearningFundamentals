@@ -17,9 +17,12 @@ function generatePassword(){
 }
 
 function copyToClipboard(password){
-  const textArea = password;
-  textArea.select();
-  document.execCommand('copy');
+    const passwordInput = document.createElement('textarea');
+    passwordInput.value = password;
+    document.body.appendChild(passwordInput);
+    passwordInput.select();
+    document.execCommand('copy');
+    document.body.removeChild(passwordInput);
 }
 
 function App() {
