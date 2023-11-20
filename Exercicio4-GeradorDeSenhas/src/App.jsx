@@ -1,9 +1,10 @@
 import { useState } from 'react'
 import './App.css'
+import Input from './components/Input';
 
-function generatePassword(){
+function generatePassword(size){
   const characters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!@#$%&*';
-  const lenght = 12;
+  const lenght = size;
   let i = 0;
   let password = ''
 
@@ -28,18 +29,21 @@ function copyToClipboard(password){
 function App() {
   const [copyText, setCopyText] = useState("Copy")
   const [password, setPassword] = useState('')
+  const [passwordSize, setPasswordSize] = useState(12)
 
   return (
     <>
       <h1>Password Generator</h1>
+      <Input passwordSize={passwordSize} setPasswordSize={setPasswordSize} />
+      <br />
       <button
         onClick={() => {
-          setPassword(generatePassword())
+          setPassword(generatePassword(passwordSize))
           setCopyText('Copy')
         }}
-
       >
-        Generate</button>
+        Generate a password with {passwordSize} digits
+      </button>
 
       <button
         style={{marginLeft: "15px"}}
@@ -49,7 +53,6 @@ function App() {
         }}>
           {copyText}
       </button>
-
       <h4>{password}</h4>
     </>
   )
