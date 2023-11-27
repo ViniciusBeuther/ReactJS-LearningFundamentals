@@ -42,7 +42,8 @@ export default function App(){
 
         <button 
           onClick={handleClick}
-        >Adicionar</button>
+        > Adicionar
+        </button>
       </form>
 
       <div className="games-div">
