@@ -53,7 +53,9 @@ export default function App(){
             <span>
               <h2>{item.title}</h2>
               <br />
-              <button>Remover</button>
+              <button>
+                Remover
+              </button>
             </span>
           </div>
         ))}
