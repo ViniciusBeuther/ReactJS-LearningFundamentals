@@ -20,7 +20,9 @@ export default function App(){
 
   return (
     <div id="app">
-      <h1>Biblioteca de Jogos</h1>
+      <h1>
+        Biblioteca de Jogos
+      </h1>
       <form action="form">
         <label htmlFor="game-title">Titulo do jogo: </label>
         <input 
