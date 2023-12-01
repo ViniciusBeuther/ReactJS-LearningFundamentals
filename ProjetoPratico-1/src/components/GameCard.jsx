@@ -1,7 +1,9 @@
 const GameCard = (props) => {
     return(
         <div>
-            <h1>Title</h1>
+            <img src={props.image} alt="image" />
+            <h1>{props.title}</h1>
+            <p>{props.description}</p>
         </div>
     )
 }
