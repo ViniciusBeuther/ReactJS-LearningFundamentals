@@ -1,26 +1,32 @@
 import { createBrowserRouter } from "react-router-dom";
+import Dashboard from "./pages/Dashboard";
+import Storage from "./pages/Storage";
+import Details from "./pages/Details";
+import NewItem from "./pages/NewItem";
+import UpdateItem from "./pages/UpdateItem";
+import User from "./objects/user";
 
-export default function router(){
     const router = createBrowserRouter([
         {
             path: "/",
-            element: <Dashboard />,
+            element: <Dashboard itemList={User.itemList} />,
         },
         {
             path: "/storage",
-            element: <Storage />
+            element: <Storage itemList={User.itemList} />
         },
         {
             path: "/:itemId",
-            element: <Details />
+            element: <Details itemList={User.itemList} />
         },
         {
             path: "/newItem",
-            element: <NewItem />
+            element: <NewItem itemList={User.itemList} />
         },
         {
             path: "/updateItem",
-            element: <UpdateItem />
+            element: <UpdateItem itemList={User.itemList} />
         }
     ])
-}
+
+    export default router
