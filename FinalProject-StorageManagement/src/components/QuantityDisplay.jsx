@@ -1,6 +1,8 @@
-const QuantityDisplay = () => {
-    return(
-        <section id="quantityDisplay" className="
+const QuantityDisplay = ({ description, stateQuantity }) => {
+return (
+    <section
+    id="quantityDisplay"
+    className="
         bg-background-200
         text-beige
         w-[350px]
@@ -9,17 +11,26 @@ const QuantityDisplay = () => {
         justify-center
         items-center
         "
-        >
-            <p className="
+    >
+    <p
+        className="
                 relative
                 top-[-75px]
-                left-[-30px]
-            ">Description</p>
-            <h1 className="
+                left-[-35%]
+            "
+    >
+        {description}
+    </p>
+    <h1
+        className="
                 absolute
-            ">1</h1>
-        </section>
-    )
-}
+                text-5xl
+            "
+    >
+        {stateQuantity}
+    </h1>
+    </section>
+);
+};
 
-export default QuantityDisplay
+export default QuantityDisplay;

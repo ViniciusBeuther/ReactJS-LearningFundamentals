@@ -1,8 +1,19 @@
+import { useState } from "react";
+import Footer from "../components/Footer";
 import Header from "../components/Header";
 import QuantityDisplay from "../components/QuantityDisplay";
+import TableHeader from "../components/TableHeader";
+
 
 export default function Dashboard(itemList){
-    const n = ["1", "2", "3", "4"]
+    const [diversity, setDiversity] = useState(0)
+    const [totalInStorage, setTotalInStorage] = useState(0)
+    const [recentItems, setRecentItems] = useState([])
+    const [itemsEnding, setItemsEnding] = useState([])
+
+    const displayInformationList = [{description: "Diversity of items", stateQuantity: diversity} ] 
+    const leftTable = ["Recent Items", "", "Actions"]
+    const rightTable = ["Ending Items", "Quantity", "Actions"]
 
     return(
         <div className="
@@ -17,6 +28,7 @@ export default function Dashboard(itemList){
                 text-beige
                 my-5
             ">Dashboard</h1>
+
             <article className="
                 flex
                 justify-between
@@ -24,12 +36,21 @@ export default function Dashboard(itemList){
                 px-3
                 flex-wrap
             ">
-                {n.map(()=>(
-                    <QuantityDisplay />
+                {displayInformationList.map(({description, stateQuantity})=>(
+                    <QuantityDisplay description={description} stateQuantity={stateQuantity} />
                 ))}
             </article>
         
-            
+            <article className="
+                tables
+                flex
+                justify-between
+                items-center
+            ">
+                    <TableHeader headerContent={leftTable} />
+                    <TableHeader headerContent={rightTable} />
+            </article>
+            <Footer />
         </div>
     )
 }

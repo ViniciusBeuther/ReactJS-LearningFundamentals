@@ -4,6 +4,9 @@ import { Link } from "react-router-dom"
 
 const Header = () =>{
     return(
+
+        <>
+        
         <header 
             className="
                 header
@@ -30,6 +33,7 @@ const Header = () =>{
                 <Link to="/">Home</Link>
             </span>
         </header>
+        </>
     )
 }
 

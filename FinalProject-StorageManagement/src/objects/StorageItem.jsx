@@ -1,6 +1,6 @@
 
 class StorageItem{
-    constructor({ name, quantity, price, description, category, addedDate }){
+    constructor(name, quantity, price, description, category){
         this.name = name,
         this.quantity = quantity,
         this.price = price, 
