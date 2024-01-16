@@ -56,10 +56,10 @@ export default function Dashboard(dataObj){
     const [itemsEnding, setItemsEnding] = useState(verifyEndingItems(userObj.itemList))
 
     const displayInformationList = [
-        ["Diversity of Items", diversity], 
-        ["Total of Items in Inventory", totalInStorage],
+        ["Different Items in Stock", diversity], 
+        ["Total of Items in Stock", totalInStorage],
         ["Recent Items", recentItems],
-        ["Ending Items", itemsEnding]
+        ["Less than 10 Items", itemsEnding]
     ]
 
     return(
