@@ -1,4 +1,5 @@
-const QuantityDisplay = ({ description, stateQuantity }) => {
+const QuantityDisplay = ({description, quantity}) => {
+    
 return (
     <section
     id="quantityDisplay"
@@ -16,10 +17,10 @@ return (
         className="
                 relative
                 top-[-75px]
-                left-[-35%]
             "
     >
         {description}
+        
     </p>
     <h1
         className="
@@ -27,7 +28,7 @@ return (
                 text-5xl
             "
     >
-        {stateQuantity}
+        {quantity}
     </h1>
     </section>
 );

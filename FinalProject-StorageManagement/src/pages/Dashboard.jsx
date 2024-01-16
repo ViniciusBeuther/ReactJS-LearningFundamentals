@@ -4,16 +4,63 @@ import Header from "../components/Header";
 import QuantityDisplay from "../components/QuantityDisplay";
 import TableHeader from "../components/TableHeader";
 
+function verifyUniqueItems(array) {
+    let uniqueItems = new Set();
+    array.forEach((ArrItem) => {
+        uniqueItems.add(ArrItem.category);
+    });
 
-export default function Dashboard(itemList){
-    const [diversity, setDiversity] = useState(0)
-    const [totalInStorage, setTotalInStorage] = useState(0)
-    const [recentItems, setRecentItems] = useState([])
-    const [itemsEnding, setItemsEnding] = useState([])
+    return uniqueItems;
+}
 
-    const displayInformationList = [{description: "Diversity of items", stateQuantity: diversity} ] 
+function verifyRecentItems(array) {
+    let recentItems = []
+    const today = new Date()
+    
+    array.forEach((ArrItem) => {
+        let differenceInTime = today.getTime() - ArrItem.addedDate.getTime()
+        let differenceInDays = Math.round(differenceInTime / (1000 * 3600 * 24))
+        if(differenceInDays <= 10){
+            recentItems.push(ArrItem)
+        }  
+    })
+
+    return(recentItems)
+}
+
+function verifyEndingItems(array){
+    const lowLevel = []
+    array.forEach((ArrItem) => {
+        if (ArrItem.quantity < 10){
+            lowLevel.push(ArrItem)
+        }
+    })
+    
+    const result = lowLevel.length === 0 ? 0 : lowLevel.length
+    
+    return(result)
+}
+
+export default function Dashboard(dataObj){
+    const userObj = dataObj.data
+
     const leftTable = ["Recent Items", "", "Actions"]
     const rightTable = ["Ending Items", "Quantity", "Actions"]
+
+    const [diversity, setDiversity] = useState(verifyUniqueItems(userObj.itemList).size)
+
+    const [totalInStorage, setTotalInStorage] = useState(userObj.itemList.length)
+
+    const [recentItems, setRecentItems] = useState(verifyRecentItems(userObj.itemList).length)
+
+    const [itemsEnding, setItemsEnding] = useState(verifyEndingItems(userObj.itemList))
+
+    const displayInformationList = [
+        ["Diversity of Items", diversity], 
+        ["Total of Items in Inventory", totalInStorage],
+        ["Recent Items", recentItems],
+        ["Ending Items", itemsEnding]
+    ]
 
     return(
         <div className="
@@ -36,8 +83,8 @@ export default function Dashboard(itemList){
                 px-3
                 flex-wrap
             ">
-                {displayInformationList.map(({description, stateQuantity})=>(
-                    <QuantityDisplay description={description} stateQuantity={stateQuantity} />
+                {displayInformationList.map(([desc, quantity], index)=>(
+                    <QuantityDisplay key={index} description={desc} quantity={quantity} />
                 ))}
             </article>
         

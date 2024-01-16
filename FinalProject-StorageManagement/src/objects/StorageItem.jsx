@@ -6,8 +6,9 @@ class StorageItem{
         this.price = price, 
         this.description = description,
         this.category = category, 
-        this.addedDate = formatDate(new Date())
+        this.addedDate = new Date()
     }
 }
+
 
 export default StorageItem

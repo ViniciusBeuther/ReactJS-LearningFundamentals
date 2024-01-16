@@ -9,23 +9,23 @@ import User from "./objects/user";
     const router = createBrowserRouter([
         {
             path: "/",
-            element: <Dashboard itemList={User.itemList} />,
+            element: <Dashboard data={User} />,
         },
         {
             path: "/storage",
-            element: <Storage itemList={User.itemList} />
+            element: <Storage data={User} />
         },
         {
             path: "/:itemId",
-            element: <Details itemList={User.itemList} />
+            element: <Details data={User} />
         },
         {
             path: "/newItem",
-            element: <NewItem itemList={User.itemList} />
+            element: <NewItem data={User} />
         },
         {
             path: "/updateItem",
-            element: <UpdateItem itemList={User.itemList} />
+            element: <UpdateItem data={User} />
         }
     ])
 
