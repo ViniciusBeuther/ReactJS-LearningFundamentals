@@ -12,6 +12,7 @@ const TableHeader = ({headerContent}) => {
                 w-[100%]
                 bg-background-200
                 text-beige
+                border
             ">
                 <p>{headerContent[0]}</p>
                 <p>{headerContent[1]}</p>

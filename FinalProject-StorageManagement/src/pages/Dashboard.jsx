@@ -3,6 +3,7 @@ import Footer from "../components/Footer";
 import Header from "../components/Header";
 import QuantityDisplay from "../components/QuantityDisplay";
 import TableHeader from "../components/TableHeader";
+import Table from "../components/Table";
 
 function verifyUniqueItems(array) {
     let uniqueItems = new Set();
@@ -93,9 +94,11 @@ export default function Dashboard(dataObj){
                 flex
                 justify-between
                 items-center
+                border
             ">
-                    <TableHeader headerContent={leftTable} />
-                    <TableHeader headerContent={rightTable} />
+                <Table headerContent={leftTable} data={userObj} />
+            
+                <Table headerContent={rightTable} data={userObj} />
             </article>
             <Footer />
         </div>
