@@ -1,10 +1,11 @@
 import Header from "../components/Header";
+import NavBar from "../components/NavBar";
 
 export default function Storage(itemList){
     return(
         <div className="dashboard">
-            <Header />
-            <h1>Storage</h1>
+            <Header page={"Stock Items"} />
+            <NavBar />
         </div>
     )
 }

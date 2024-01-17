@@ -2,7 +2,7 @@ import React from "react"; // Add the missing import statement
 
 import { Link } from "react-router-dom"
 
-const Header = () =>{
+const Header = (props) =>{
     return(
 
         <>
@@ -33,6 +33,15 @@ const Header = () =>{
                 <Link to="/">Home</Link>
             </span>
         </header>
+        {props.page === "" ?
+            null            : 
+        <h1 className="
+                text-5xl
+                px-3
+                text-beige
+                my-5
+            ">{props.page}</h1>
+    }
         </>
     )
 }

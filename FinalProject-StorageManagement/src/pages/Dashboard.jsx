@@ -66,13 +66,8 @@ export default function Dashboard(dataObj){
             h-[100vh]
             bg-background-100
         ">
-            <Header />
-            <h1 className="
-                text-5xl
-                px-3
-                text-beige
-                my-5
-            ">Dashboard</h1>
+            <Header page={"Dashboard"} />
+
 
             <article className="
                 flex

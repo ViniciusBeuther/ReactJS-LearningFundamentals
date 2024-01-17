@@ -1,4 +1,6 @@
-
+function handleClick() {
+    return(alert('CLICK'))
+}
 
 const Table = (props) => {
     const headers = props.headerContent
@@ -26,11 +28,16 @@ const Table = (props) => {
                         <td>
 
                         </td> :
-                        <td className="w-[70px] text-center">{itemOfArray.quantity}</td>
+                        
+                        <td className="w-[70px] text-center">
+                            {itemOfArray.quantity}
+                        </td>
                     }
 
                         <td className="w-[50%] text-center">
-                            <button class="bg-beige hover:pointer text-black font-bold py-2 px-4 rounded-full text-lg">Details</button>
+                            <button class="bg-beige hover:pointer text-black font-bold py-2 px-4 rounded-full text-lg"
+                            onClick={handleClick}
+                            >Details</button>
                         </td>
                     </tr>
                     ))}
