@@ -9,3 +9,8 @@
     box-sizing: border-box;
     font-family: 'Open Sans', sans-serif;
 }
+
+body{
+    height: 100%;
+    background-color: #135B54;
+}

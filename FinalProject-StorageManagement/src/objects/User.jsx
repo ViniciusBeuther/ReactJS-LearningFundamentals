@@ -17,12 +17,13 @@ class data{
                 }
             }
         }
+
     }
 
 const User = new data("Beuther WEB")
 
 
     User.addItem(new StorageItem("Cash",12,10.00,"Item for testing purposes", "Financial"))
-    User.addItem(new StorageItem("Pizza",2,25.00,"Item for testing purposes 2", "Food"))
+    User.addItem(new StorageItem("Pizza",7,25.00,"Item for testing purposes 2", "Food"))
     
 export default User

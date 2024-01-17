@@ -2,7 +2,6 @@ import { useState } from "react";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import QuantityDisplay from "../components/QuantityDisplay";
-import TableHeader from "../components/TableHeader";
 import Table from "../components/Table";
 
 function verifyUniqueItems(array) {
@@ -25,7 +24,7 @@ function verifyRecentItems(array) {
             recentItems.push(ArrItem)
         }  
     })
-
+    console.log(recentItems)
     return(recentItems)
 }
 
@@ -37,9 +36,7 @@ function verifyEndingItems(array){
         }
     })
     
-    const result = lowLevel.length === 0 ? 0 : lowLevel.length
-    
-    return(result)
+    return(lowLevel)
 }
 
 export default function Dashboard(dataObj){
@@ -54,7 +51,7 @@ export default function Dashboard(dataObj){
 
     const [recentItems, setRecentItems] = useState(verifyRecentItems(userObj.itemList).length)
 
-    const [itemsEnding, setItemsEnding] = useState(verifyEndingItems(userObj.itemList))
+    const [itemsEnding, setItemsEnding] = useState(verifyEndingItems(userObj.itemList).length)
 
     const displayInformationList = [
         ["Different Items in Stock", diversity], 
@@ -93,14 +90,15 @@ export default function Dashboard(dataObj){
                 tables
                 flex
                 justify-between
-                items-center
-                border
+                items-top
             ">
-                <Table headerContent={leftTable} data={userObj} />
-            
-                <Table headerContent={rightTable} data={userObj} />
+                <Table headerContent={leftTable} data={userObj} dataArr={verifyRecentItems(userObj.itemList)}  />
+                
+                <Table headerContent={rightTable} data={userObj} dataArr={verifyEndingItems(userObj.itemList)} />
             </article>
             <Footer />
         </div>
     )
 }
+
+//

@@ -9,7 +9,7 @@ import User from "./objects/user";
     const router = createBrowserRouter([
         {
             path: "/",
-            element: <Dashboard data={User} />,
+            element: <Dashboard data={User} />
         },
         {
             path: "/storage",
