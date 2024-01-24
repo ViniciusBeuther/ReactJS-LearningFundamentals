@@ -4,7 +4,7 @@ import Storage from "./pages/Storage";
 import Details from "./pages/Details";
 import NewItem from "./pages/NewItem";
 import UpdateItem from "./pages/UpdateItem";
-import User from "./objects/user";
+import User from "./objects/User";
 
     const router = createBrowserRouter([
         {
@@ -16,16 +16,16 @@ import User from "./objects/user";
             element: <Storage data={User} />
         },
         {
-            path: "/:itemId",
-            element: <Details data={User} />
+            path: "storage/:itemID",
+            element: <Details />
         },
         {
             path: "/newItem",
             element: <NewItem data={User} />
         },
         {
-            path: "/updateItem",
-            element: <UpdateItem data={User} />
+            path: "/updateItem/:itemID",
+            element: <UpdateItem />
         }
     ])
 

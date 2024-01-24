@@ -1,14 +1,13 @@
-import Footer from "../components/Footer";
 import Header from "../components/Header";
 import NavBar from "../components/NavBar";
 import NewItemForm from "../components/NewItemForm";
 
-export default function NewItem(itemList){
+export default function NewItem(user){
     return(
-        <div className="dashboard">
+        <div className="newItem">
             <Header page={"Add New Item"}  />
             <NavBar />
-            <NewItemForm user={""} />
+            <NewItemForm user={user} />
         </div>
     )
 }
