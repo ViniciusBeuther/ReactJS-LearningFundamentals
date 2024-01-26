@@ -13,6 +13,20 @@ class data {
     removeItem(itemToRemove) {
         this.itemList = this.itemList.filter((currentItem) => currentItem.itemId !== itemToRemove.itemId);
     }
+
+    updateItem({ name, quantity, price, description, category, id }) {
+        const itemToUpdate = this.itemList.find(currentItem => currentItem.itemId === id);
+        
+        if (itemToUpdate) {
+            itemToUpdate.name = name;
+            itemToUpdate.quantity = quantity;
+            itemToUpdate.price = price;
+            itemToUpdate.description = description;
+            itemToUpdate.category = category;
+            itemToUpdate.dateModified = new Date(); // Se dateModified é uma propriedade válida
+        }
+    }
+    
 }
 
 const User = new data("Beuther WEB");

@@ -7,6 +7,7 @@ class StorageItem{
         this.description = description,
         this.category = category, 
         this.addedDate = new Date()
+        this.dateModified = null
         this.itemId = Math.floor(Math.random() * 10000)
     }
 

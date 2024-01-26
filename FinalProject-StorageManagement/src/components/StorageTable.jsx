@@ -1,13 +1,9 @@
-import { Link, useParams } from "react-router-dom"
-import Table from "./Table"
-import User from "../objects/User"
+import { Link } from "react-router-dom"
 import { useState } from "react"
 
-function handleRemove(item, state, setState) {
-    console.log(User)
+function handleRemove(item, setState) {
     User.removeItem(item)
-    setState(state)
-    console.log(User)
+    setState(User.itemList)
 }
 
 const StorageTable = (props) => {
@@ -32,16 +28,15 @@ const StorageTable = (props) => {
                             <p>{rowContent.category}</p>
                         
                             <div className="grid grid-cols-3 gap-2 text-black">
-                                <Link to={`/storage/${rowContent.itemId}`} className="w-full">
-                                    <button className="bg-customGreen p-1 rounded-md hover:brightness-75">
-                                        Detail
-                                    </button>
+                                <Link to={`/storage/${rowContent.itemId}`} className="w-full bg-customGreen p-1 rounded-md hover:brightness-75 text-center">
+                                    Details
                                 </Link>
 
-                                <button className="bg-beige p-1 rounded-md hover:brightness-75">
+                                <Link to={`/updateItem/${rowContent.itemId}`} className="bg-beige p-1 rounded-md hover:brightness-75 text-center">
                                     Edit
-                                </button>
-                                <button className="bg-customRed p-1 rounded-md hover:brightness-75" onClick={() => handleRemove(rowContent, arrayOfItems, setArrayOfItems)}>
+                                </Link>
+
+                                <button className="bg-customRed p-1 rounded-md hover:brightness-75" onClick={() => handleRemove(rowContent, setArrayOfItems)}>
                                     Remove
                                 </button>
                             </div>

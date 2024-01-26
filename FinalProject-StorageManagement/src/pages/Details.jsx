@@ -1,7 +1,7 @@
 import { Link, useParams } from "react-router-dom";
 import Header from "../components/Header";
-import User from "../objects/User";
 import NavBar from "../components/NavBar";
+import User from "../objects/User"
 
 
 function handleRemove(item){

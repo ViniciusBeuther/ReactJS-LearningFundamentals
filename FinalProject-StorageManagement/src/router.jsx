@@ -4,7 +4,7 @@ import Storage from "./pages/Storage";
 import Details from "./pages/Details";
 import NewItem from "./pages/NewItem";
 import UpdateItem from "./pages/UpdateItem";
-import User from "./objects/User";
+import User from './objects/User'
 
     const router = createBrowserRouter([
         {
