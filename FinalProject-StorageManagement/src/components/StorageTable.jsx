@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom"
 import { useState } from "react"
+import User from "../objects/User"
 
 function handleRemove(item, setState) {
     User.removeItem(item)

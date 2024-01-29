@@ -1,12 +1,16 @@
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import Header from "../components/Header";
 import NavBar from "../components/NavBar";
 import User from "../objects/User"
 
 
 function handleRemove(item){
+    const navigate = useNavigate
+    const route = "http://localhost:5173/"
     User.removeItem(item)
-    console.log(User.itemList)
+    console.log("Removed")
+    navigate(route)
+    
 }
 
 function handleSubmit(item){
@@ -34,13 +38,15 @@ const Details = () =>{
                 
                 <form onSubmit={() => handleSubmit(item)} className="grid grid-cols-2 grid-rows-1 gap-2 pl-5">
                     <Link to={`/updateItem/${item.itemId}`}>
-                        <button className="bg-beige text-black p-1 rounded-md hover:brightness-75">
+                        <button className="bg-beige text-black p-1 rounded-md hover:brightness-75" >
                             Update
                         </button>
                     </Link>
+                    
                         <button className="bg-customRed text-black p-1 rounded-md hover:brightness-75" type="submit">
                             Remove
                         </button>
+                    
                 </form>
             </article>
         </div>
